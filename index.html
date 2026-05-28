@@ -1367,7 +1367,9 @@ function renderAdmin() {
   document.getElementById('adm-sb').className='score-adm'+(leading==='b'?' leading':'');
   document.getElementById('adm-na').textContent=naText;
   document.getElementById('adm-nb').textContent=nbText;
-  document.getElementById('adm-sets').textContent=S.setsA+' — '+S.setsB;
+  const _dispSetsLeft  = adminSidesSwapped ? S.setsB : S.setsA;
+  const _dispSetsRight = adminSidesSwapped ? S.setsA : S.setsB;
+  document.getElementById('adm-sets').textContent=_dispSetsLeft+' — '+_dispSetsRight;
   document.getElementById('adm-setnum').textContent=S.setNum;
 
   // [5] Условие смены сторон
